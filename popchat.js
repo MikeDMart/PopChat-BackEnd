@@ -8,7 +8,7 @@
 const PopChat = (() => {
 
   // ── CONFIG ──────────────────────────────────────────────
-  const BACKEND  = 'https://popchat-backend.onrender.com';
+  const BACKEND  = 'https://popchat-backend-2abp.onrender.com';
   const MAX_TEXT = 20;
   const MAX_H    = 8;
 
