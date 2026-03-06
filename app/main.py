@@ -1,25 +1,21 @@
-"""
-PopChat Backend — FastAPI + FreeFlow LLM + Redis
-Universal AI chat agent for any website.
-"""
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routes import chat
+import os
 
-app = FastAPI(title="PopChat", version="1.0.0")
+app = FastAPI(title="PopChat API")
 
-# All origins allowed — PopChat is a public npm package
-# used on any website
+# CORS configuration - permite todos los orígenes (para desarrollo)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["POST", "GET"],
-    allow_headers=["Content-Type"],
+    allow_origins=["*"],  # En producción, restringe esto a tus dominios
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
-app.include_router(chat.router, prefix="/api")
+app.include_router(chat.router)
 
 @app.get("/")
-def health():
+async def root():
     return {"status": "ok", "service": "PopChat"}
