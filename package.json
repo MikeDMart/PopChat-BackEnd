@@ -1,0 +1,16 @@
+{
+  "name": "popchat",
+  "version": "1.0.0",
+  "description": "AI chat agent for any website. One line to install.",
+  "main": "popchat.js",
+  "scripts": {
+    "test": "echo \"No frontend tests yet\""
+  },
+  "keywords": ["ai", "chat", "widget", "rag", "llm", "chatbot"],
+  "author": "MikeDMart",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MikeDMart/popchat"
+  }
+}
