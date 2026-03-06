@@ -38,7 +38,8 @@ async def chat(body: ChatRequest):
         ]
 
         # 4. Call FreeFlow (Groq → Gemini fallback)
-        with FreeFlowClient() as ai:
+        ai = FreeFlowClient()
+        response = ai.chat(messages=messages, max_tokens=600)
             response = ai.chat(messages=messages, max_tokens=600)
 
         ai_reply = response.content
